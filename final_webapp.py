@@ -117,7 +117,7 @@ def data_sources():
 
 # Main interactive app page content with updated code
 def interactive_app():
-    @st.cache_resource
+    @st.cache_data
     def load_data():
         df = pd.read_csv('final_result.csv')
         df['Price'] = df['Price'].replace('[\$,]', '', regex=True).astype(float)
